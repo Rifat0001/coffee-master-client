@@ -11,7 +11,7 @@ const Header = () => {
                 <div className="flex-none">
                     <Link className='font-bold text-xl mx-8' to="/">Home</Link>
                     <Link className='font-bold text-xl mx-8' to="/addCoffee">AddCoffee</Link>
-                    <Link className='font-bold text-xl mx-8' to="/updateCoffee">UpdateCoffee</Link>
+
                 </div>
 
             </div>

@@ -19,8 +19,8 @@ const UpdateCoffee = () => {
         console.log(newCoffee);
 
         // send data to server side use post method to trigger server side App.post function 
-        fetch('http://localhost:5000/coffee', {
-            method: 'POST',
+        fetch(`http://localhost:5000/coffee/${_id}`, {
+            method: 'PUT',
             headers: {
                 'content-type': 'application/json',
             },
@@ -29,10 +29,10 @@ const UpdateCoffee = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data)
-                if (data.insertedId) {
+                if (data.modifiedCount > 0) {
                     Swal.fire({
                         title: 'Success!',
-                        text: 'User added successfully',
+                        text: 'Coffee Updated successfully',
                         icon: 'success',
                         confirmButtonText: 'Cool'
                     })
