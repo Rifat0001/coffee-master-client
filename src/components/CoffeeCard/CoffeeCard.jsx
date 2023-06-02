@@ -49,7 +49,9 @@ const CoffeeCard = ({ coffee, coffees, setCoffees }) => {
                         </div>
 
                         <div className="btn-group btn-group-vertical gap-3">
-                            <button className="btn bg-indigo-500 text-white ">View</button>
+
+                            <Link to={`details/${_id}`}><button className="btn bg-indigo-500 text-white">View</button>
+                            </Link>
 
                             <Link to={`updateCoffee/${_id}`}><button className="btn bg-green-500 text-white">Edit</button>
                             </Link>
