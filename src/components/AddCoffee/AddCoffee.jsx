@@ -1,4 +1,5 @@
 import React from 'react';
+import Swal from 'sweetalert2'
 
 const AddCoffee = () => {
     const handleAddCoffee = event => {
@@ -25,8 +26,14 @@ const AddCoffee = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data)
-                if (data.insertedId > 0) {
-                    alert('suuces')
+                if (data.insertedId) {
+                    Swal.fire({
+                        title: 'Success!',
+                        text: 'User added successfully',
+                        icon: 'success',
+                        confirmButtonText: 'Cool'
+                    })
+                    form.reset();
                 }
             })
     }
@@ -49,7 +56,7 @@ const AddCoffee = () => {
                 <div className=' my-2'>
                     <input type="text" name='url' placeholder="Photo Url" className="me-2 input input-bordered input-primary w-full" />
                 </div>
-                <button className="btn btn-primary text-white w-full">Button</button>
+                <button className="btn btn-primary text-white w-full">Add Coffee</button>
             </form>
         </div>
     );
